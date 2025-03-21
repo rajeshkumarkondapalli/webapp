@@ -1,10 +1,3 @@
-#!/bin/bash
-
-# Create the directory structure
-mkdir -p chatbot_app/backend
-
-# Create backend files
-cat > chatbot_app/backend/app.py <<EOL
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
