@@ -11,7 +11,6 @@ def chat():
         data = request.get_json()
         user_query = data.get('message')
 
-        # Generate response without database storage
         chatbot_response = generate_chatbot_response(user_query)
 
         return jsonify({'response': chatbot_response})
@@ -21,9 +20,6 @@ def chat():
         return jsonify({'error': str(e)}), 500
 
 def generate_chatbot_response(user_query):
-    """
-    Simple chatbot logic without database
-    """
     if "hello" in user_query.lower():
         return "Hello there! How can I help you?"
     elif "goodbye" in user_query.lower():
